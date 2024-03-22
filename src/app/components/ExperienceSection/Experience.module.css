@@ -1,0 +1,12 @@
+
+.root {
+  position: relative;
+  padding: 0 9%;
+  height: 100%;
+}
+.img {
+  max-height: 476px;
+  min-height: 300px;
+  border: .2rem solid var(--main-color);
+  border-radius: 8px;
+}

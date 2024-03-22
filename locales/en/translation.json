@@ -1,0 +1,17 @@
+{
+  "contactMe": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "subject": "Subject"
+  },
+  "actions": {
+    "sendMsg": "Send message",
+    "downloadPDF": "Download Resume"
+  },
+  "errors": {
+    "required": "{field} field is required.",
+    "incorrectEmail": "Incorrect email address."
+  }
+}

@@ -1,0 +1,31 @@
+.children_content section {
+  z-index: 10000;
+  min-height: calc(100vh);
+  padding: 96px 0 0 0;
+  min-width: 350px;
+}
+.children_content section:nth-child(1) {
+  padding: 164px 0 0 0;
+}
+
+@media (max-width: 1087px) {
+  .children_content section {
+    padding: 104px 0 0 0;
+  }
+  .children_content section:nth-child(1) {
+    padding: 136px 0 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .children_content section {
+    padding: 96px 0 0 0;
+  }
+  .children_content section:nth-child(1) {
+    padding: 112px 0 0 0;
+  }
+}
+
+.index {
+  z-index: 100;
+}
