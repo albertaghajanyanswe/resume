@@ -1,12 +1,11 @@
 'use client'
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { Box } from '@mui/material';
+import { Box, IconButton, Tooltip } from '@mui/material';
 import { RiLinkedinLine } from "react-icons/ri";
-import { RiTwitterFill } from "react-icons/ri";
-import { RiFacebookLine } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
+import { LiaTelegram } from "react-icons/lia";
+
 import styles from "./HomeSection.module.css";
 import Logo from '@/assets/Albert.Aghajanyan.png';
 import CustomButton from "@/app/shared/customButton/CustomButton";
@@ -46,6 +45,9 @@ export default function HomeSection() {
     document.body.removeChild(link);
   };
 
+  const copyCodeToClipboard = (copyText: string) => {
+    navigator.clipboard.writeText(copyText);
+  }
   return (
     <main className={styles.main}>
       <div className={`${styles.home} ${styles.show_animate}`} id={styles.home}>
@@ -88,20 +90,20 @@ export default function HomeSection() {
           </div>
         </div>
         <div className={styles.home_sci}>
-          <Link href='#'><RiLinkedinLine /></Link>
-          <Link href='#'><RiTwitterFill /></Link>
-          <Link href='#'><RiFacebookLine /></Link>
-          {/* <Link href='#'><i className=" bx bxl-facebook"></i></Link>
-          <Link href='#'><i className=" bx bxl-twitter"></i></Link>
-          <Link href='#'><i className=" bx bxl-linkedin"></i></Link> */}
+          <Tooltip title="Copy linked in url">
+            <IconButton sx={{ borderRadius: '50%!important', width: 'fit-content!important' }} onClick={() => copyCodeToClipboard('https://www.linkedin.com/in/albert-aghajanyan-1a10ba181/')}><RiLinkedinLine /></IconButton>
+          </Tooltip>
+          <Tooltip title="Copy telegram username">
+            <IconButton sx={{ borderRadius: '50%!important', width: 'fit-content!important' }} onClick={() => copyCodeToClipboard('@albertaghajanyan')}><LiaTelegram /></IconButton>
+          </Tooltip>
           <span className={styles.animate} styles="--i:5;"></span>
         </div>
         <Box sx={{ height: '5rem', mt: 4, mb: 4, width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
-            <CustomButton
-              type='primary'
-              title={t('actions.downloadPDF')}
-              onClick={downloadCV}
-            />
+          <CustomButton
+            type='primary'
+            title={t('actions.downloadPDF')}
+            onClick={downloadCV}
+          />
         </Box>
       </div>
     </main>

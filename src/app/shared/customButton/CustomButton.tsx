@@ -7,17 +7,19 @@ function CustomButton({
   type = 'primary',
   onClick,
   sx = {},
-  disabled = false
+  disabled = false,
+  children
 }: {
   title: string,
   type?: 'primary' | 'secondary'
   onClick: () => void,
   sx?: any,
-   disabled?: boolean
+  disabled?: boolean
+  children?: React.ReactNode
 }) {
   return (
     <StyledEngineProvider injectFirst>
-      <Button disabled={disabled} sx={{ ...sx }} onClick={onClick} className={`${styles.btn} ${styles[`btn_${type}`]}`}>{title}</Button>
+      <Button disabled={disabled} sx={{ ...sx }} onClick={onClick} className={`${styles.btn} ${styles[`btn_${type}`]}`}>{title}{children}</Button>
     </StyledEngineProvider>
   )
 }
