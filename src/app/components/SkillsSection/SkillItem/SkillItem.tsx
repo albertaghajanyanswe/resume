@@ -8,7 +8,7 @@ export default function SkillItem({ title }: { title: string }) {
     <div className={styles.root}>
       <Checked />
       <Typography sx={{ ml: 1, fontSize: '1.6rem' }}>{title}</Typography>
-      <span className={styles.animate} styles="--i:1;"></span>
+      <span className={styles.animate} style={{ '--i': '1' } as React.CSSProperties}></span>
     </div>
   )
 }

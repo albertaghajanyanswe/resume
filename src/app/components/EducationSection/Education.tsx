@@ -20,7 +20,7 @@ export default function Education() {
         priority={true}
         style={{ position: 'initial', width: '100%' }}
       />
-      <span className={styles.animate} styles="--i:1;"></span>
+      <span className={styles.animate} style={{ '--i': '1' } as React.CSSProperties}></span>
     </div>
   );
 }

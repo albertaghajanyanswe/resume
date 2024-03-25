@@ -7,7 +7,6 @@ import getTheme from './base';
 
 export const CustomThemeContext = React.createContext({
   currentTheme: 'light',
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-empty-function
   setTheme: (name: string) => {},
 });
 

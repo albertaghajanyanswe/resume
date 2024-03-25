@@ -24,7 +24,7 @@ export default function Skills() {
     <div className={styles.root}>
       <div className={styles.show_animate}>
         <Typography sx={{ mb: 4, fontSize: { xs: '36px', md: '48px', lg: '64px' }, fontFamily: 'Poppins', fontWeight: 600, textAlign: 'center', color: 'var(--main-color)' }}>Skills</Typography>
-        <span className={styles.animate} styles="--i:1;"></span>
+        <span className={styles.animate} style={{ '--i': '1' } as React.CSSProperties}></span>
       </div>
       <Grid container spacing={1}>
         {skills.map(i =>
@@ -37,7 +37,7 @@ export default function Skills() {
 
       <Box className={styles.show_animate} sx={{ mt: 6 }}>
         <Typography sx={{ mb: 3, fontSize: { xs: '16px', md: '16px', lg: '24px' }, fontFamily: 'Poppins', fontWeight: 600, textAlign: 'center', color: 'var(--main-color)' }}>Tools</Typography>
-        <span className={styles.animate} styles="--i:2;"></span>
+        <span className={styles.animate} style={{ '--i': '2' } as React.CSSProperties}></span>
       </Box>
       <Grid container spacing={1}>
         {tools.map(i =>
@@ -50,7 +50,7 @@ export default function Skills() {
 
       <Box className={styles.show_animate} sx={{ mt: 6 }}>
         <Typography sx={{ mb: 3, fontSize: { xs: '16px', md: '16px', lg: '24px' }, fontFamily: 'Poppins', fontWeight: 600, textAlign: 'center', color: 'var(--main-color)' }}>Methodologies</Typography>
-        <span className={styles.animate} styles="--i:3;"></span>
+        <span className={styles.animate} style={{ '--i': '3' } as React.CSSProperties}></span>
       </Box>
       <Grid container spacing={1}>
         {methods.map(i =>

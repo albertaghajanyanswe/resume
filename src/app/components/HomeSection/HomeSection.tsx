@@ -53,12 +53,12 @@ export default function HomeSection() {
       <div className={`${styles.home} ${styles.show_animate}`} id={styles.home}>
         <div className={styles.home_main}>
           <div className={`${styles.home_content}`}>
-            <h1>Hi, I'm <span>Albert Aghajanyan</span>
-              <span className={styles.animate} styles="--i:1;"></span>
+            <h1>Hi, I&apos;m <span>Albert Aghajanyan</span>
+              <span className={styles.animate} style={{ '--i': '1' } as React.CSSProperties}></span>
             </h1>
             <div className={styles.text_animate}>
               <h3>Software Development Engineer </h3>
-              <span className={styles.animate} styles="--i:2;"></span>
+              <span className={styles.animate} style={{ '--i': '2' } as React.CSSProperties}></span>
             </div>
             <p>
               Software Development Engineer with over 7 years of work experience, with more
@@ -70,7 +70,7 @@ export default function HomeSection() {
               hardworking individual and has ability to work in a team and independently in any
               environment.
             </p>
-            <span className={styles.animate} styles="--i:3;"></span>
+            <span className={styles.animate} style={{ '--i': '3' } as React.CSSProperties}></span>
             <div className={styles.btn_box}>
               <CustomButton disabled title='Hire me' onClick={contactUs} type='primary' />
               <CustomButton disabled title="Let's Talk" onClick={contactUs} type='secondary' />
@@ -86,7 +86,7 @@ export default function HomeSection() {
               priority={false}
             />
             <span className={styles.circle_spin}></span>
-            <span className={styles.animate} styles="--i:5;"></span>
+            <span className={styles.animate} style={{ '--i': '4' } as React.CSSProperties}></span>
           </div>
         </div>
         <div className={styles.home_sci}>
@@ -96,7 +96,7 @@ export default function HomeSection() {
           <Tooltip title="Copy telegram username">
             <IconButton sx={{ borderRadius: '50%!important', width: 'fit-content!important' }} onClick={() => copyCodeToClipboard('@albertaghajanyan')}><LiaTelegram /></IconButton>
           </Tooltip>
-          <span className={styles.animate} styles="--i:5;"></span>
+          <span className={styles.animate} style={{ '--i': '5' } as React.CSSProperties}></span>
         </div>
         <Box sx={{ height: '5rem', mt: 4, mb: 4, width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
           <CustomButton
