@@ -6,14 +6,14 @@ import CustomThemeProvider from "../shared/themes/CustomThemeProvider";
 import initTranslations from "../i18n";
 import TranslationProvider from "../providers/TranslationProvider";
 import { Metadata } from "next";
-
+import { CustomSnackbarProvider } from "../providers/CustomSnackbarProvider";
 
 const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ["latin"]
+  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
 });
 
-const i18nNamespaces = ['translation'];
+const i18nNamespaces = ["translation"];
 
 export const metadata: Metadata = {
   title: "Albert Aghajanyan Resume",
@@ -34,14 +34,18 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={poppins.className}>
-        <TranslationProvider locale={locale} resources={resources} namespaces={i18nNamespaces}>
-          <CustomThemeProvider>
-            <CustomNavBar />
-            <div className={styles.children_content}>
-              {children}
-            </div>
-          </CustomThemeProvider>
-        </TranslationProvider>
+        <CustomSnackbarProvider>
+          <TranslationProvider
+            locale={locale}
+            resources={resources}
+            namespaces={i18nNamespaces}
+          >
+            <CustomThemeProvider>
+              <CustomNavBar />
+              <div className={styles.children_content}>{children}</div>
+            </CustomThemeProvider>
+          </TranslationProvider>
+        </CustomSnackbarProvider>
       </body>
     </html>
   );

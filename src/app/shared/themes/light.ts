@@ -7,6 +7,15 @@ declare module '@mui/material/styles' {
     warning?: string;
     success?: string;
     info?: string;
+    red1: string;
+    red2: string;
+    red3: string;
+    green1: string;
+    green2: string;
+    green3: string;
+    orange1: string;
+    orange2: string;
+    orange3: string;
   }
 
   // eslint-disable-next-line no-unused-vars
@@ -15,6 +24,15 @@ declare module '@mui/material/styles' {
     warning?: string;
     success?: string;
     info?: string;
+    red1: string;
+    red2: string;
+    red3: string;
+    green1: string;
+    green2: string;
+    green3: string;
+    orange1: string;
+    orange2: string;
+    orange3: string;
   }
 }
 
@@ -32,6 +50,15 @@ const Default = (): DefaultPaletteOptions => {
       warning: '#E99800',
       success: '#21a900',
       info: '#096C7C',
+      red1: '#FEF1F3',
+      green1: '#EEFEF9',
+      orange1: '#FFFAF3',
+      red2: '#F7D9DE',
+      green2: '#B3E7D7',
+      orange2: '#FCECD9',
+      red3: '#D04C60',
+      green3: '#009E6E',
+      orange3: '#DA9C50',
     },
     secondary: {
       main: '#004B7F',
@@ -39,6 +66,15 @@ const Default = (): DefaultPaletteOptions => {
       warning: '#E99800',
       success: '#21a900',
       info: '#096C7C',
+      red1: '#FEF1F3',
+      green1: '#EEFEF9',
+      orange1: '#FFFAF3',
+      red2: '#F7D9DE',
+      green2: '#B3E7D7',
+      orange2: '#FCECD9',
+      red3: '#D04C60',
+      green3: '#009E6E',
+      orange3: '#DA9C50',
     },
   };
 };
