@@ -8,7 +8,7 @@ export const CustomSnackbarProvider = ({ children }: { children: React.ReactNode
     <Box
       sx={{ justifyContent: 'center', '& > div': {fontSize: '14px'} }}
       component={SnackbarProvider}
-      autoHideDuration={50000}
+      autoHideDuration={5000}
       hideIconVariant
       anchorOrigin={{
         vertical: 'bottom',
