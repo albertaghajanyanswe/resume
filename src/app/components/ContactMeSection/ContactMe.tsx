@@ -4,13 +4,13 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
+import { useSnackbar } from "notistack";
 import { DEFAULT_VALUES_CONTACT_ME } from "@/app/shared/defaultValues";
 import StepHOC from "@/app/shared/form/FormHOC";
 import { iContactMe } from "@/app/shared/types";
 import { isEmail, requiredErrMsg } from "@/app/helpers/formHelper";
 import CustomButton from "@/app/shared/customButton/CustomButton";
 import styles from "./ContactMe.module.css";
-import { useSnackbar } from "notistack";
 import SystemMessage from "../systemMessage";
 
 const FormHOC = StepHOC<iContactMe>()([
