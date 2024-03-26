@@ -9,40 +9,35 @@ type EmailPayload = {
 }
 
 const sendEmailFetch = async (data: EmailPayload) => {
-    await fetch(NEXT_PUBLIC_SENDGRID_API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${NEXT_PUBLIC_SENDGRID_API_KEY}`
-        },
-        body: JSON.stringify({
-          personalizations: [
+  await fetch(NEXT_PUBLIC_SENDGRID_API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${NEXT_PUBLIC_SENDGRID_API_KEY}`
+    },
+    body: JSON.stringify({
+      personalizations: [
+        {
+          to: [
             {
-              to: [
-                {
-                  email: process.env.NEXT_PUBLIC_SMTP_USER
-                }
-              ],
-              from: [
-                {
-                  email: data.senderEmail
-                }
-              ],
-              subject: data.subject
+              email: process.env.NEXT_PUBLIC_SMTP_USER,
             }
           ],
-          from: {
-            email: data.senderEmail,
-            name: 'Test SendGrid'
-          },
-          content: [
-            {
-              type: 'text/html',
-              value: data.html
-            }
-          ]
-        })
-    });
+          subject: data.subject
+        }
+      ],
+      from: {
+        email: process.env.NEXT_PUBLIC_SMTP_USER,
+        name: 'Test SendGrid'
+      },
+      content: [
+        {
+          type: 'text/html',
+          value: data.html
+        }
+      ]
+    })
+  });
 }
 
 export { sendEmailFetch };

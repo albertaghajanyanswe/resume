@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import emailValidator from 'email-validator';
 import sendGridEmail from "@/app/lib/sendGrid";
+import { sendEmailFetch } from "@/app/lib/fetchSendEmailGrid";
 
 async function main(body: BodyType) {
   try {
@@ -22,7 +23,7 @@ async function main(body: BodyType) {
       </div>
       `;
 
-    await sendGridEmail({
+    await sendEmailFetch({
       senderEmail: body.senderEmail || '',
       subject: body.subject || `New message from: ${body.senderEmail}`,
       html: template
