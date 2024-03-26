@@ -17,7 +17,6 @@ export async function sendMail(data: EmailPayload) {
       pass: process.env.NEXT_PUBLIC_SMTP_PASSWORD,
     },
   }
-  console.log('smtpOptions = ', smtpOptions)
 
   const transporter = nodemailer.createTransport(smtpOptions);
 
@@ -29,8 +28,7 @@ export async function sendMail(data: EmailPayload) {
     html: data.html,
   };
 
-  console.log('mailOptions = ', mailOptions)
-  transporter.sendMail(mailOptions, function (error, info) {
+  await transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       throw new Error(error as any);
     } else {
