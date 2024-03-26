@@ -40,7 +40,7 @@ export default function ContactMe() {
       handleSubmit(async (data) => {
         try {
           setLoading(true);
-          await fetch("/api/contact-us", {
+          const res = await fetch("/api/contact-us-grid", {
             method: "POST",
             body: JSON.stringify({
               name: data.name,
@@ -50,7 +50,12 @@ export default function ContactMe() {
               text: data.message,
             }),
           });
-          SystemMessage(enqueueSnackbar, "Your message was sent successfully.", { variant: 'success', theme });
+          console.log('res = ', res)
+          if (res?.status == 200) {
+            SystemMessage(enqueueSnackbar, "Your message was sent successfully.", { variant: 'success', theme });
+          } else {
+            SystemMessage(enqueueSnackbar, "Your message was not sent.", { variant: 'error', theme });
+          }
 
         } catch (error: any) {
           SystemMessage(enqueueSnackbar, "Your message was not sent.", { variant: 'error', theme });
